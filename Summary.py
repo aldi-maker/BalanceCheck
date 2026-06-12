@@ -43,7 +43,7 @@ def run():
 
         # Konversi numerik
         for col in df_selected_CIT.columns:
-            df_selected_CIT[col] = pd.to_numeric(df_selected_CIT[col], errors="ignore")
+            df_selected_CIT[col] = pd.to_numeric(df_selected_CIT[col], errors="coerce")
 
         # Hitung turunan
         df_selected_CIT["Total Sisa Uang"] = (
