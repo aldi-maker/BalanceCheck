@@ -44,7 +44,7 @@ def run():
         # Konversi numerik
         for col in df_selected_CIT.columns:
             try:
-                df_selected_CIT[col] = pd.to_numeric(df_selected_CIT[col], errors="coerce")
+                df_selected_CIT[col] = pd.to_numeric(df_selected_CIT[col], errors="coerce").fillna(0)
             except Exception:
                 pass  # biarkan kolom yang memang bukan angka
 
