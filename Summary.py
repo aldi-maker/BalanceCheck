@@ -43,7 +43,10 @@ def run():
 
         # Konversi numerik
         for col in df_selected_CIT.columns:
-            df_selected_CIT[col] = pd.to_numeric(df_selected_CIT[col], errors="coerce")
+            try:
+                df_selected_CIT[col] = pd.to_numeric(df_selected_CIT[col], errors="coerce")
+            except Exception:
+                pass  # biarkan kolom yang memang bukan angka
 
         # Hitung turunan
         df_selected_CIT["Total Sisa Uang"] = (
